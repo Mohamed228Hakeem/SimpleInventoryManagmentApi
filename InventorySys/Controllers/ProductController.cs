@@ -43,11 +43,17 @@ namespace InventorySys.Controllers
         public async Task<IActionResult> AddProduct([FromBody]ProductCreateDTO productDto)
         {
 
-
-
             var productModel = productDto.To_Product_From_CreateProductDTO();
             await _ProductRepo.AddProduct(productModel);
             return Ok(productModel.Map_Product_To_CreateDTO());
+        }
+
+
+        [HttpPut("UpdateProduct")]
+        public async Task<IActionResult> UpdateProduct(int productId,string CategoryName)
+        {
+            var product = await _ProductRepo.AddCategoryToProduct(productId,CategoryName);
+            return Ok();
         }
         
     }

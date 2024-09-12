@@ -11,5 +11,7 @@ namespace InventorySys.Interfaces
     {
         public  Task<List<CategoryDTO>> GetAll();
         public Task AddCategoryAsync(string categoryName);
+
+        public Task<bool> DeleteCategoryAsync(int categoryId);
     }
 }

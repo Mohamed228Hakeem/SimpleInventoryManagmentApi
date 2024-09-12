@@ -144,3 +144,4 @@ D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\r
 D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\InventorySys.pdb
 D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\InventorySys.genruntimeconfig.cache
 D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\ref\InventorySys.dll
+D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\InventorySys.sourcelink.json

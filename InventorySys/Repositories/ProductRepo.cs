@@ -91,6 +91,23 @@ namespace InventorySys.Repositories
             throw new NotImplementedException();
         }
 
+        public async Task<bool> AddCategoryToProduct(int productId, string CategoryName)
+        {
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.ProductId == productId);
+            if (product == null)
+            return false;
+
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.Name.ToLower() == CategoryName.ToLower());
+            if (category == null)
+            return false;
+
+            product.CategoryId = category.Id;
+            await  _context.SaveChangesAsync();
+
+            return true;
+        }
+
+
         
     }
 }

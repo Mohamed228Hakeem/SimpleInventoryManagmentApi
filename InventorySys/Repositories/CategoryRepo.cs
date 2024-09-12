@@ -40,5 +40,25 @@ namespace InventorySys.Repositories
             return categoryDto;
             
         }
+
+        public async Task<bool> DeleteCategoryAsync(int id)
+        {
+            var category = _context.Categories.Include(p => p.Products).FirstOrDefault(p => p.Id == id);
+            if (category == null)
+            return false;
+
+            foreach (var product in category.Products)
+            {
+                product.CategoryId = 2; //defualt Category
+            }        
+
+            _context.Categories.Remove(category);
+
+            await _context.SaveChangesAsync();
+
+            return true;
+
+        }
+
     }
 }

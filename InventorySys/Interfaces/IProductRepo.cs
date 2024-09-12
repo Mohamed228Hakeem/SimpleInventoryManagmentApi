@@ -14,5 +14,6 @@ namespace InventorySys.Interfaces
        public Task<Product> GetProductById(int id);
        public Task<Product> AddProduct(Product product);
         public Task<List<ProductDTo>> SearchProducts(QueryObject query);
+        public Task<bool> AddCategoryToProduct(int productId, string CategoryName);
     }
 }

@@ -45,6 +45,22 @@ namespace InventorySys.Controllers
             });
         }
 
+        [HttpDelete("DeleteCategory")]
+        public async Task<IActionResult> DeleteCategory(int categoryId)
+        {
+            if (categoryId<=0)
+            {
+                return BadRequest("Category Id is required");
+            }
+
+            await _CategoryRepo.DeleteCategoryAsync(categoryId);
+
+            return Ok(new {
+                MessageContent = $"Category Called '{categoryId}'Deleted Successfully",
+            });
+        }
+
+
         
     }
 }
