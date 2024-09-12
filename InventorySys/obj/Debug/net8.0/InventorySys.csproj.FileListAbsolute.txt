@@ -145,3 +145,8 @@ D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\I
 D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\InventorySys.genruntimeconfig.cache
 D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\ref\InventorySys.dll
 D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\obj\Debug\net8.0\InventorySys.sourcelink.json
+D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\College\4th Year Prep\C# Apis\InventorySystem\InventorySys\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

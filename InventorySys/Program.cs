@@ -2,6 +2,7 @@ using InventorySys.Data;
 using InventorySys.Interfaces;
 using InventorySys.Models;
 using InventorySys.Repositories;
+using InventorySys.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 builder.Services.AddScoped<IProductRepo, ProductRepo>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddControllers();
 
@@ -63,9 +65,14 @@ builder.Services.AddSwaggerGen(option =>
 
 builder.Services.AddIdentity<AppUser,IdentityRole>(options => 
 {
-    // options.Password.RequireDigit = true;
-    // options.Password.RequireLowercase = true;
+     options.Password.RequireDigit = false;
+     options.Password.RequireLowercase = false;
     options.Password.RequiredLength = 4;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredUniqueChars= 0;
+    options.Password.RequireUppercase = false;
+    options.User.RequireUniqueEmail = true;
+    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
 })
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
