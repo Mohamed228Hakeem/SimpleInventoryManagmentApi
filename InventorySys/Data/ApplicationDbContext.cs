@@ -19,6 +19,9 @@ namespace InventorySys.Data
 
         public DbSet<Models.Category> Categories { get; set; }
         public DbSet<Models.Product> Products { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -31,6 +34,19 @@ namespace InventorySys.Data
             .WithMany(c => c.Products)
             .HasForeignKey(p => p.CategoryId)
             .OnDelete(DeleteBehavior.Cascade); // Optional: Choose how to handle cascading deletes
+
+           // Define the relationship between Order and IdentityUser
+        builder.Entity<Order>()
+            .HasOne(o => o.User)
+            .WithMany()
+            .HasForeignKey(o => o.UserId);
+
+        // Define the relationship between Order and OrderItem
+        builder.Entity<OrderItem>()
+            .HasOne(oi => oi.Order)
+            .WithMany(o => o.orderItems)
+            .HasForeignKey(oi => oi.OrderId);
+        
 
 
             List<IdentityRole> roles = new List<IdentityRole>

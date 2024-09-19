@@ -34,6 +34,7 @@ namespace InventorySys.Mapper
                 Price = productDTO.Price,
                 Description = productDTO.Description,
                 CategoryId = productDTO.CategoryId,
+                Quantity = productDTO.Quantity,
             };
 
         }

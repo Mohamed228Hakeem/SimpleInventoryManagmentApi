@@ -6,10 +6,12 @@ using InventorySys.DTOs;
 using InventorySys.Helpers;
 using InventorySys.Interfaces;
 using InventorySys.Mapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventorySys.Controllers
 {
+    
     [ApiController]
     [Route("api/ProductManagement")]
     public class ProductController : ControllerBase
